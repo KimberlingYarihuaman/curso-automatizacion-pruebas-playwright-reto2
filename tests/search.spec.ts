@@ -4,7 +4,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test('Realizar una busqueda que no tenga resultados', async ({ page }) => {
+test('Realizar una busqueda que no tenga resultados (new)', async ({ page }) => {
   await page.getByRole('button', {name: 'Search'}).click();
 
   await page.getByPlaceholder('Search docs').click();
@@ -17,7 +17,7 @@ test('Realizar una busqueda que no tenga resultados', async ({ page }) => {
 
 })
 
-test('Limpiar el input de busqueda', async ({ page }) => {
+test('Limpiar el input de busqueda (new)', async ({ page }) => {
   await page.getByRole('button', { name: 'Search' }).click();
 
   const searchBox = page.getByPlaceholder('Search docs');
@@ -33,7 +33,7 @@ test('Limpiar el input de busqueda', async ({ page }) => {
   await expect(searchBox).toHaveAttribute('value', '');
 });
 
-test('Realizar una busqueda que genere al menos tenga un resultado', async ({ page }) => {
+test('Realizar una busqueda que genere al menos tenga un resultado (new)', async ({ page }) => {
   await page.getByRole('button', { name: 'Search' }).click();
 
   const searchBox = page.getByPlaceholder('Search docs');
